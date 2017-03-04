@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>{{ page.title|default:"The Place to Buy &amp; Sell Wheels" }} &rsaquo; WheelFlip.com</title>
+
+    <link rel="icon" type="image/png" href="{{ STATIC_URL }}img/favicon.png" />
+
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/grid.css" type="text/css" media="screen">
+</head>
+
+<body id="{{ page.class|default:"default" }}-page">
+    <div id="sticky-wrapper">
+        <div id="header">
+            <div class="grid_container">
+
+                <div class="login">
+                    <div class="lower phone">
+                        <span>Call Us</span><a href="tel:+15627895678">562-789-5678</a>
+                    </div>
+                </div>
+
+                <h1><a href="/">WheelFlip.com</a></h1>
+            </div>
+        </div>
+
+        <div id="navbar">
+            <div class="nav-wrapper">
+            <ul id="primary-nav">
+                {# TODO do this with enumeration of a list of pages. #}
+                <li class="home"><a href="{% url home %}"{% active_url 'home' %}><span>Home</span></a></li>
+                <li class="services"><a href="{% url services %}"{% active_url 'services' %}><span>Services</span></a></li>
+                <li class="shop"><a href="http://shop.wheelflip.com" target="_blank"><span>Shop</span></a></li>
+                <li class="contact last"><a href="{% url contact %}"{% active_url 'contact' %}><span>Contact</span></a></li>
+            </ul>
+            </div>
+        </div>
+
+        <div id="wrapper">
+            <div id="upper">
+            {% block upper %}{% endblock %}
+            </div>
+
+            <div id="content" class="grid_container clearfix">
+                {% block message_wrapper %}
+                {% include "alerts/alert_loop.html" %}
+                {% endblock %}
+
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+
+        <div class="stickyFooterPush"></div>
+    </div>
+
+    <div id="footer">
+        <footer class="grid_container">
+            <p class="left">&copy; {% now "Y" %} WheelFlip, All Rights Reserved</p>
+            <p class="right">Powered by <a href="http://djangopony.com/" target="_blank">Ponies</a></p>
+        </footer>
+    </div>
+
+    <div id="fb-root"></div>
+    <script>
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-21730898-3']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+
+</body>
+</html>

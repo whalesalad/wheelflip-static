@@ -1,0 +1,24 @@
+BEGIN
+<div class="homepage-scroller">
+    <h2>Welcome to WheelFlip</h2>
+    <h3>Full-service wheel customization in Southern California</h3>
+    <img src="{{ STATIC_URL }}/img/home/{{ photos|random }}.jpg" />
+</div>
+
+<div class="what-is-wheelflip alpha grid_6">
+    <h3>WheelFlip is a full-service wheel customization shop<br/>located in Santa Fe Springs, CA.</h3>
+    <h4>We specialize in <strong>rebarreling</strong>, <strong>relipping</strong>, and <strong>custom machining</strong>, but also offer the standard range of refinishing such as <strong>repairs</strong>, <strong>polishing</strong>, <strong>powder coating</strong>, <strong>chroming</strong>, and much more! Be sure to check out the <b><a href="/services/">services</a></b> page for more info and <b><a href="contact/">drop us a line</a></b> with your inquiries.</h4>
+    <p>We're also the #1 marketplace for buying &amp; selling wheels online, completely FREE of charge! Go ahead and <a href="{% url browse %}">browse our marketplace</a> or <a href="{% url sell %}">sell some wheels</a> of your own.</p>
+</div>
+
+<div class="omega grid_4">
+    <h3>The Store is Open!</h3>
+    <p>You asked and we listened. The WheelFlip Online Store is online and ready to fulfill your lip, barrel, and wheel part needs.</p>
+    <div class="buttons bottom">
+        <a class="btn" href="http://shop.wheelflip.com" target="_blank"><span>Visit the WheelFlip Online Store</span></a>
+    </div>
+
+    <h3>Get at us on Facebook</h3>
+    <div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
+    <fb:like-box href="http://www.facebook.com/wheelflip" stream="false" header="false"></fb:like-box>
+</div>
